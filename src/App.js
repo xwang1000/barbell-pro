@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import logo from './logo.svg'
 import './App.css'
 import Inventory from './components/Inventory'
 import Barbell from './components/Barbell'
@@ -12,7 +11,7 @@ function App() {
   const defaultBarWeight = 45
   const defaultBells = []
 
-  const [barWeight, setBarWeigth] = useState(defaultBarWeight)
+  const barWeight = defaultBarWeight;
   const [bells, setBells] = useState([25, 45])
 
   const getBellSum = () => {

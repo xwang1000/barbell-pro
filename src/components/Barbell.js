@@ -35,8 +35,6 @@ const Root = styled.div`
   width: 100%;
 `;
 
-const Bar = styled.h1``
-
 const Bells = styled.div`
   // min-height: 600px;
   min-height: 342px;
