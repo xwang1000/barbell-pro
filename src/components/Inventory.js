@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Bell from './Bell'
 
@@ -38,14 +38,5 @@ const Root = styled.div`
   justify-content: center;
   width: 100%;
 `
-
-const Weight = styled.a`
-  display: inline-block;
-  color: #283044;
-  background-color: #bfa89e;
-  padding: 5px;
-  margin: 5px;
-  cursor: pointer;
-`;
 
 export default Inventory;
