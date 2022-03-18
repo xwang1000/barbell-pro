@@ -2,67 +2,74 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import './App.css'
-import Inventory from './components/Inventory'
-import Barbell from './components/Barbell'
+import SkewerParts from './components/SkewerParts'
+import Skewer from './components/Skewer'
 import Clear from './components/Clear'
 
 function App() {
 
-  const defaultBarWeight = 45
-  const defaultBells = []
+  const defaultToppings = []
 
-  const barWeight = defaultBarWeight;
-  const [bells, setBells] = useState([25, 45])
+  const [toppings, setToppings] = useState([
+    {
+      label: 'Salmon',
+      id: '2',
+      cost: 6
+    },
+    {
+      label: 'Wings',
+      id: '3',
+      cost: 4
+    },
+  ])
 
-  const getBellSum = () => {
-    const singleSideBellSum = bells.reduce((partialSum, a) => partialSum + a, 0)
-    return singleSideBellSum * 2
-  }
+  const getTotalCost = () => {
+    let cost = 0
 
-  const getTotal = () => {
-    const totalSum = getBellSum() + barWeight
+    for (let i = 0; i < toppings.length; i++) {
+      cost = cost + toppings[i].cost
+    }
 
-    return totalSum
+    return cost
   }
   
-  const addBell = (bellWeight) => {
-    setBells([...bells, bellWeight])
+  const addTopping = (topping) => {
+    setToppings([topping, ...toppings])
   }
 
-  const removeBell = (value) => {
-    var index = bells.indexOf(value)
-    const newBells = []
+  const removeTopping = (index) => {
+    const newToppings = []
 
-    for (let i = 0; i < bells.length; i++) {
+    for (let i = 0; i < toppings.length; i++) {
       if (i !== index) {
-        newBells.push(bells[i])
+        newToppings.push(toppings[i])
       }
     }
 
-    setBells(newBells)
+    setToppings(newToppings)
   }
 
-  const clear = () => setBells(defaultBells)
+  const clear = () => setToppings(defaultToppings)
   
   return (
     <div className="App">
       <Header>
-        <Title>Barbell Pro</Title>
+        <Title>Skewer Bro</Title>
       </Header>
 
       <Body>
-        <Barbell 
-          bells={bells}
-          bar={barWeight}
-          bellSum={getBellSum()}
-          total={getTotal()}
-          removeBell={removeBell}
+        <Skewer
+          toppings={toppings}
+          total={getTotalCost()}
+          removeTopping={removeTopping}
         />
       </Body>
 
       <Footer>
         <Clear clear={clear}/>
-        <Inventory addBell={addBell} />
+        <SkewerParts
+          addTopping={addTopping}
+        />
       </Footer>
     </div>
   )
@@ -86,6 +93,7 @@ const Body = styled.div`
   flex: 4;
   display: flex;
   position: relative;
+  overflow-y: scroll;
 `;
 
 const Footer = styled.div`

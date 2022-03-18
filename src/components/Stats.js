@@ -2,24 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Stats = (props) => {
-  const { bar, bells, total } = props;
+  const { count, total } = props;
 
   return (
     <Root>
       <H2>
-        <span>bar: </span>
-        <span>{bar}lb</span>
-      </H2>
-
-      <H2>
-        <span>bells: </span>
-        <span>{bells}lb</span>
+        <span>{count} pieces</span>
       </H2>
 
       <H1>
         <span className="total">TOTAL: </span>
+        <span className="total">$</span>
         {total}
-        <span className="total">lb</span>
       </H1>
     </Root>
   )

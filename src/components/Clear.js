@@ -7,9 +7,6 @@ const Clear = (props) => {
       <Icon className="icon">
         <ion-icon name="refresh"></ion-icon>
       </Icon>
-      <Hint
-       className="hint"
-      >Empty Bar</Hint>
     </Button>
   )
 }
