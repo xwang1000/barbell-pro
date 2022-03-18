@@ -4,9 +4,12 @@ import styled from 'styled-components';
 const Clear = (props) => {
   return (
     <Button onClick={props.clear}>
-      <Icon>
+      <Icon className="icon">
         <ion-icon name="refresh"></ion-icon>
       </Icon>
+      <Hint
+       className="hint"
+      >Empty Bar</Hint>
     </Button>
   )
 }
@@ -14,23 +17,32 @@ const Clear = (props) => {
 const Button = styled.a`
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 10px;
   color: #e7eeff;
   cursor: pointer;
 
   &:hover {
     color: white;
     transition: 0.4s all ease;
+
+    .icon {
+      transform: rotate(360deg);
+    }
+
+    .hint {
+      opacity: 1;
+    }
   }
 `;
 
 const Icon = styled.div`
-  // padding: 12px 20px;
   transition: 0.4s all ease;
   font-size: 30px;
-  &:hover {
-    transform: rotate(360deg);
-  }
+`;
+
+const Hint = styled.span`
+  opacity: 0;
+  transition: 0.4s all ease;
 `;
 
 export default Clear;
