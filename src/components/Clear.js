@@ -37,9 +37,4 @@ const Icon = styled.div`
   font-size: 30px;
 `;
 
-const Hint = styled.span`
-  opacity: 0;
-  transition: 0.4s all ease;
-`;
-
 export default Clear;

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Bell from './Bell'
 import Stats from './Stats'
 
 const Skewer = (props) => {

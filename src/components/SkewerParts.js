@@ -61,7 +61,10 @@ const Topping = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+
+  &:hover {
+    opacity: 0.4;
+  }
 `;
 
 const Img = styled.img``;
