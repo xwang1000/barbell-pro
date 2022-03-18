@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import logo from './logo.svg'
+import './App.css'
+import Inventory from './components/Inventory'
+import Barbell from './components/Barbell'
+import Clear from './components/Clear'
 
 function App() {
+
+  const defaultBarWeight = 45
+  const defaultBells = []
+
+  const [barWeight, setBarWeigth] = useState(defaultBarWeight)
+  const [bells, setBells] = useState(defaultBells)
+  
+  const addBell = (bellWeight) => {
+    setBells([...bells, bellWeight])
+  }
+
+  const clear = () => setBells(defaultBells)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Inventory addBell={addBell} />
+      <Inventory addBell={addBell} />
+      <Barbell 
+        barWeight={barWeight}
+        bells={bells}
+      />
+      <Clear clear={clear}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
