@@ -60,6 +60,10 @@ const Topping = styled.img`
   margin-right: auto;
   margin-bottom: -20px;
   z-index: 1;
+
+  &:hover {
+    opacity: 0.4;
+  }
 `;
 
 export default Skewer

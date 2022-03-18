@@ -39,8 +39,8 @@ const SkewerParts = (props) => {
   return (
     <Root>
       {
-        toppings.map(topping => (
-          <Topping onClick={() => addTopping(topping)}>
+        toppings.map((topping, index) => (
+          <Topping key={topping.label+index} onClick={() => addTopping(topping)}>
             <Img width="70" src={require(`../assets/images/${topping.id}.png`)} />
             <Label>{topping.label}</Label>
           </Topping>
