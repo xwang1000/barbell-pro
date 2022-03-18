@@ -26,6 +26,8 @@ const Stats = (props) => {
 }
 
 const Root = styled.div`
+  max-width: 400px;
+  margin: auto;
   position: absolute;
   right: 10px;
   left: 10px;
