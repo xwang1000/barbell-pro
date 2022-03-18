@@ -22,7 +22,7 @@ const Inventory = (props) => {
             key={weight}
             bell={weight}
             onClick={() => addBell(weight)}
-            bgColor="#283044"
+            bgColor="#e7eeff"
           />
         ))
       }

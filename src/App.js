@@ -69,7 +69,7 @@ function App() {
 }
 
 const Title = styled.h1`
-  color: #7581a0;
+  color: #78a1bb;
   font-family: 'Hammersmith One', sans-serif;
   letter-spacing: 2px;
   margin-top: 0;

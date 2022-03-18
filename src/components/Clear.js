@@ -15,7 +15,7 @@ const Button = styled.a`
   position: absolute;
   top: 20px;
   right: 20px;
-  color: #283044;
+  color: #e7eeff;
   cursor: pointer;
 
   &:hover {
