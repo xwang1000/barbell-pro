@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+
+import TotalWeightInput from './TotalWeightInput';
 
 const Stats = (props) => {
   const { bar, bells, total } = props;
+  const [enteringWeight, setEnteringWeight] = useState(false);
+  const clickHandler = () => {
+    setEnteringWeight(true)
+  }
 
+  const handleTotalChange = () => {
+    console.log('input handler')
+  }
   return (
     <Root>
       <H2>
@@ -16,9 +25,16 @@ const Stats = (props) => {
         <span>{bells}lb</span>
       </H2>
 
-      <H1>
+      <H1 onClick={clickHandler}>
         <span className="total">TOTAL: </span>
-        {total}
+        {
+          enteringWeight ? 
+          <TotalWeightInput
+            handleInputChange={handleTotalChange}
+          />
+          :
+          total
+        }
         <span className="total">lb</span>
       </H1>
     </Root>

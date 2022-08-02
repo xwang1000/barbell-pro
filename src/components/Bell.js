@@ -20,8 +20,8 @@ const Bell = (props) => {
         bgColor={bgColor}
       />
     </Root>
-  )
-}
+  );
+};
 
 const Root = styled.div`
   display: inline-flex;
