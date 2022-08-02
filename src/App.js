@@ -29,6 +29,8 @@ function App() {
     setBells([...bells, bellWeight])
   }
 
+  const [total, setTotal] = useState(getTotal())
+
   const removeBell = (value) => {
     var index = bells.indexOf(value)
     const newBells = []
@@ -45,7 +47,10 @@ function App() {
   const clear = () => setBells(defaultBells)
   
   const setNewTotalWeight = (value) => {
-    console.log('app', value)
+    // Set total value
+    setTotal(value)
+
+    // Set new plates to reflect the new total value
   }
   
   return (
@@ -59,7 +64,7 @@ function App() {
           bells={bells}
           bar={barWeight}
           bellSum={getBellSum()}
-          total={getTotal()}
+          total={total}
           removeBell={removeBell}
           setNewTotalWeight={setNewTotalWeight}
         />
