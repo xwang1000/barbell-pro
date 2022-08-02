@@ -4,8 +4,12 @@ import Bell from './Bell'
 import Stats from './Stats'
 
 const Barbell = (props) => {
-  const { bells, bar, bellSum, total, removeBell } = props
+  const { bells, bar, bellSum, total, removeBell, setNewTotalWeight } = props
   const sortedBells = [...bells].sort(function(a, b){return b-a})
+
+  const setNewWeight = (value) => {
+    setNewTotalWeight(value);
+  }
   
   return (
     <Root>
@@ -26,6 +30,7 @@ const Barbell = (props) => {
         bar={bar}
         bells={bellSum}
         total={total}
+        setNewWeight={setNewWeight}
       />
     </Root>
   )

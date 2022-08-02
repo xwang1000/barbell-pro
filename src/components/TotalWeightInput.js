@@ -2,17 +2,17 @@ import React from 'react';
 
 const TotalWeightInput = (props) => {
   const {
-    handleInputChange,
-    initialValue
+    initialValue,
+    setNewTotalWeight
   } = props;
 
-  const handleBlur = () => {
-    console.log('blurrrr')
+  const handleBlur = (e) => {
+    const newTotalWeight = e.target.value;
+    setNewTotalWeight(newTotalWeight);
   }
   
   return (
     <input
-      onChange={handleInputChange}
       onBlur={handleBlur}
       name="totalWeight"
       type="number"

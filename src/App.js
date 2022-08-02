@@ -44,6 +44,10 @@ function App() {
 
   const clear = () => setBells(defaultBells)
   
+  const setNewTotalWeight = (value) => {
+    console.log('app', value)
+  }
+  
   return (
     <div className="App">
       <Header>
@@ -57,6 +61,7 @@ function App() {
           bellSum={getBellSum()}
           total={getTotal()}
           removeBell={removeBell}
+          setNewTotalWeight={setNewTotalWeight}
         />
       </Body>
 

@@ -4,14 +4,15 @@ import styled from 'styled-components'
 import TotalWeightInput from './TotalWeightInput';
 
 const Stats = (props) => {
-  const { bar, bells, total } = props;
+  const { bar, bells, total, setNewWeight } = props;
   const [enteringWeight, setEnteringWeight] = useState(false);
   const clickHandler = () => {
     setEnteringWeight(true)
   }
 
-  const handleTotalChange = () => {
-    console.log('input handler')
+  const setNewTotalWeight = (value) => {
+    setNewWeight(value);
+    setEnteringWeight(false);
   }
   return (
     <Root>
@@ -30,7 +31,7 @@ const Stats = (props) => {
         {
           enteringWeight ? 
           <TotalWeightInput
-            handleInputChange={handleTotalChange}
+            setNewTotalWeight={setNewTotalWeight}
           />
           :
           total
